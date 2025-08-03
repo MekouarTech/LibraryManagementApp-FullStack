@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryManagementApp.Infrastructure.Migrations
 {
     [DbContext(typeof(LibraryDbContext))]
-    [Migration("20250802183309_InitialCreate")]
+    [Migration("20250803171518_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -84,6 +84,48 @@ namespace LibraryManagementApp.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Biography = "AutherBiography1",
+                            DateOfBirth = new DateTime(1985, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "AutherName1",
+                            LastName = "AutherLastName1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Biography = "AutherBiography2",
+                            DateOfBirth = new DateTime(1978, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "AutherName2",
+                            LastName = "AutherLastName2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Biography = "AutherBiography3",
+                            DateOfBirth = new DateTime(1982, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "AutherName3",
+                            LastName = "AutherLastName3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Biography = "AutherBiography4",
+                            DateOfBirth = new DateTime(1990, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "AutherName4",
+                            LastName = "AutherLastName4"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Biography = "AutherBiography5",
+                            DateOfBirth = new DateTime(1975, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "AutherName5",
+                            LastName = "AutherLastName5"
+                        });
                 });
 
             modelBuilder.Entity("LibraryManagementApp.Domain.Entities.Book", b =>
@@ -113,6 +155,56 @@ namespace LibraryManagementApp.Infrastructure.Migrations
                     b.HasIndex("PublisherId");
 
                     b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            NumberOfCopies = 15,
+                            PublicationYear = 2022,
+                            PublisherId = 1,
+                            Title = "BookTitle1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            NumberOfCopies = 12,
+                            PublicationYear = 2021,
+                            PublisherId = 2,
+                            Title = "BookTitle2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            NumberOfCopies = 8,
+                            PublicationYear = 2023,
+                            PublisherId = 3,
+                            Title = "BookTitle3"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            NumberOfCopies = 20,
+                            PublicationYear = 2020,
+                            PublisherId = 1,
+                            Title = "BookTitle4"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            NumberOfCopies = 10,
+                            PublicationYear = 2022,
+                            PublisherId = 2,
+                            Title = "BookTitle5"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            NumberOfCopies = 18,
+                            PublicationYear = 2021,
+                            PublisherId = 3,
+                            Title = "BookTitle6"
+                        });
                 });
 
             modelBuilder.Entity("LibraryManagementApp.Domain.Entities.Category", b =>
@@ -131,6 +223,28 @@ namespace LibraryManagementApp.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Fiction"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Science"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "History"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Technology"
+                        });
                 });
 
             modelBuilder.Entity("LibraryManagementApp.Domain.Entities.Publisher", b =>
@@ -149,6 +263,23 @@ namespace LibraryManagementApp.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Publishers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Publisher 1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Publisher 2"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Publisher 3"
+                        });
                 });
 
             modelBuilder.Entity("AuthorBook", b =>

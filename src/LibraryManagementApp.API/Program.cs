@@ -2,6 +2,7 @@ using LibraryManagementApp.Application;
 using LibraryManagementApp.Infrastructure;
 using LibraryManagementApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,12 +28,13 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Seed the database
+// Initialize and seed the database
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
-    await context.Database.MigrateAsync();
-    await DatabaseSeeder.SeedAsync(context);
+    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+    
+    await DatabaseInitializer.InitializeAsync(context, logger);
 }
 
 // Configure the HTTP request pipeline.

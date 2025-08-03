@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace LibraryManagementApp.Infrastructure.Migrations
 {
     /// <inheritdoc />
@@ -121,6 +123,52 @@ namespace LibraryManagementApp.Infrastructure.Migrations
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Authors",
+                columns: new[] { "Id", "Biography", "DateOfBirth", "FirstName", "LastName" },
+                values: new object[,]
+                {
+                    { 1, "AutherBiography1", new DateTime(1985, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "AutherName1", "AutherLastName1" },
+                    { 2, "AutherBiography2", new DateTime(1978, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "AutherName2", "AutherLastName2" },
+                    { 3, "AutherBiography3", new DateTime(1982, 11, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "AutherName3", "AutherLastName3" },
+                    { 4, "AutherBiography4", new DateTime(1990, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "AutherName4", "AutherLastName4" },
+                    { 5, "AutherBiography5", new DateTime(1975, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), "AutherName5", "AutherLastName5" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Fiction" },
+                    { 2, "Science" },
+                    { 3, "History" },
+                    { 4, "Technology" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Publishers",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Publisher 1" },
+                    { 2, "Publisher 2" },
+                    { 3, "Publisher 3" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "NumberOfCopies", "PublicationYear", "PublisherId", "Title" },
+                values: new object[,]
+                {
+                    { 1, 15, 2022, 1, "BookTitle1" },
+                    { 2, 12, 2021, 2, "BookTitle2" },
+                    { 3, 8, 2023, 3, "BookTitle3" },
+                    { 4, 20, 2020, 1, "BookTitle4" },
+                    { 5, 10, 2022, 2, "BookTitle5" },
+                    { 6, 18, 2021, 3, "BookTitle6" }
                 });
 
             migrationBuilder.CreateIndex(
