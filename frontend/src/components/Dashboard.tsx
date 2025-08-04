@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
       <div>
         <div className="page-header">
           <h1 className="page-title">Dashboard</h1>
-          <p className="page-subtitle">Overview of your library management system</p>
+          <p className="page-subtitle">library management system</p>
         </div>
         <div className="page-content">
           <div className="loading">Loading dashboard...</div>
@@ -60,7 +60,7 @@ const Dashboard: React.FC = () => {
     <div>
       <div className="page-header">
         <h1 className="page-title">Dashboard</h1>
-        <p className="page-subtitle">Overview of your library management system</p>
+        <p className="page-subtitle">library management system</p>
       </div>
       
       <div className="page-content">

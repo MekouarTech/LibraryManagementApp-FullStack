@@ -139,7 +139,7 @@ const AuthorList: React.FC = () => {
               className="btn btn-primary"
               onClick={() => setIsAddModalOpen(true)}
             >
-              ✍️ Add Author
+              Add Author
             </button>
           </div>
           <div className="table-container">

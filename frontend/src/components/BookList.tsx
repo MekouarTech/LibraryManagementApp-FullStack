@@ -151,7 +151,7 @@ const BookList: React.FC = () => {
               className="btn btn-primary"
               onClick={() => setIsAddModalOpen(true)}
             >
-              📚 Add Book
+              Add Book
             </button>
           </div>
           <div className="table-container">

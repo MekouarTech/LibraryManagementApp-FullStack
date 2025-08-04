@@ -133,7 +133,7 @@ const CategoryList: React.FC = () => {
               className="btn btn-primary"
               onClick={() => setIsAddModalOpen(true)}
             >
-              🏷️ Add Category
+              Add Category
             </button>
           </div>
           <div className="table-container">

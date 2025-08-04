@@ -133,7 +133,7 @@ const PublisherList: React.FC = () => {
               className="btn btn-primary"
               onClick={() => setIsAddModalOpen(true)}
             >
-              🏢 Add Publisher
+              Add Publisher
             </button>
           </div>
           <div className="table-container">
