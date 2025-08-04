@@ -12,14 +12,22 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
     <PackageReference Include="xunit" Version="2.9.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageReference Include="Moq" Version="4.20.70" />
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="AutoFixture" Version="4.18.1" />
+    <PackageReference Include="AutoFixture.Xunit2" Version="4.18.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Using Include="Xunit" />
+    <Using Include="Moq" />
+    <Using Include="FluentAssertions" />
+    <Using Include="AutoFixture" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\LibraryManagementApp.Domain\LibraryManagementApp.Domain.csproj" />
+    <ProjectReference Include="..\..\LibraryManagementApp.Application\LibraryManagementApp.Application.csproj" />
   </ItemGroup>
 
 </Project>
