@@ -19,13 +19,6 @@ public class BookCreatedEventHandler : INotificationHandler<BookCreatedEvent>
             notification.Book.Title, 
             notification.Book.Id, 
             notification.OccurredOn);
-
-        // Here you can add additional logic such as:
-        // - Sending notifications
-        // - Updating search indexes
-        // - Triggering external integrations
-        // - Sending emails to administrators
-        // - Updating analytics
         
         await Task.CompletedTask;
     }
